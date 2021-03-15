@@ -1,12 +1,22 @@
 
 exports.min = function min (array) {
-  return 0;
-}
+    if (array !== 0) {
+        return Math.min(...array);
+    }
+
+    return 0;
+} 
 
 exports.max = function max (array) {
-  return 0;
+    var max = array[0]; // берем первый элемент массива
+    for (var i = 0; i < array.length; i++) { // переберем весь массив
+        // если элемент больше, чем в переменной, то присваиваем его значение переменной
+        if (max < array[i]) max = array[i]; 
+    }
+    // возвращаем максимальное значение
+    return max;
 }
 
 exports.avg = function avg (array) {
-  return 0;
+    return array.reduce((a, b) => (a + b)) / array.length;
 }
